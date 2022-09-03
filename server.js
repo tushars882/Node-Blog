@@ -1,10 +1,19 @@
 const http = require('http');
 const fs = require('fs');
+const _ = require('lodash');
 
 const server = http.createServer((req , res )=>{
     console.log( req.url , req.method);
 
     //setting a setHeader           for more information
+
+
+    // lodash
+    const greet = _.once(()=>{
+        console.log("Hello everyone");
+    })
+
+    greet();
 
     res.setHeader('content-Type' , 'text/html');
 
