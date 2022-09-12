@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./partial/nav.ejs') %>
+    <h1>This is a welcome page</h1>
+    <%const name = 'tushar' %>
+
+    <!-- <nav>
+        <a href="/about">About</a> <br>
+        <a href="/contact"> contact</a><br>
+        <%= name%> 
+    </nav> -->
+    <div>
+        <% if(blogs.length > 0){ %>
+            <% blogs.forEach(blog => { %>
+                    <h3 class="title"><%= blog.title%></h3>
+                    <p class="snippet"><%= blog.snippet%></p>
+            <% }) %>
+        <% } else{ %>
+            <h2>Nothing to show</h2>
+            <% } %>
+           
+    </div>
+    <%- include('./partial/footer.ejs')%>
+
+</body>
+</html>
