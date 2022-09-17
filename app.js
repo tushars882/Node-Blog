@@ -10,6 +10,14 @@ app.set('view engine' , 'ejs');
 
 app.listen(3000);
 
+app.use((req,res,next)=>{
+    console.log('new request made:' );
+    console.log('hostname:', req.hostname );
+    console.log('method:', req.method );
+    console.log('path:', req.path);
+    next();
+})
+
 
 //this was for express only
 
